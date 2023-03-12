@@ -1,7 +1,4 @@
-# Clonefuns
-![0312](https://user-images.githubusercontent.com/119824625/224523476-b01be835-964e-418b-876c-c76626c46bcf.png)
-
-클론코딩 진행 상황
+# 클론코딩 진행 상황
 
 ![SHANA 웰컴](https://user-images.githubusercontent.com/119824625/224524900-be63d2c3-7a07-47a7-91b3-0b06b2c15da8.gif)
 
@@ -42,3 +39,5 @@ Idle 상태가 6초 이상 지속되면 랜덤 포즈로 변경
 ![SHANA 메모](https://user-images.githubusercontent.com/119824625/224524668-9e642c63-cf97-4ea3-ba3e-9086fec6a1c4.gif)
 
 버튼) 메모
+
+![0312](https://user-images.githubusercontent.com/119824625/224523476-b01be835-964e-418b-876c-c76626c46bcf.png)
