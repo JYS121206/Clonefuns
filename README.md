@@ -23,7 +23,7 @@ Idle 상태가 6초 이상 지속되면 랜덤 포즈로 변경
 
 플레이어가 특정 지역에 도착하면 카메라 각도 변경, 특정 UI 활성화 (벗어나면 되돌아온다)
 
-[![Video Label](https://img.youtube.com/vi/'BPTjPzT05As'/0.jpg)]('https://youtu.be/BPTjPzT05As')
+[![Video Label](https://img.youtube.com/vi/BPTjPzT05As/0.jpg)](https://youtu.be/BPTjPzT05As)
 
 플레이어가 특정 물체에 닿으면 특정 사운드 재생
 
@@ -31,7 +31,7 @@ Idle 상태가 6초 이상 지속되면 랜덤 포즈로 변경
 
 버튼) 시작 좌표로 복귀
 
-[![Video Label](https://img.youtube.com/vi/'sTop0pvwVi4'/0.jpg)]('https://youtu.be/sTop0pvwVi4')
+[![Video Label](https://img.youtube.com/vi/sTop0pvwVi4/0.jpg)](https://youtu.be/sTop0pvwVi4)
 
 버튼) 배경음악 뮤트
 
