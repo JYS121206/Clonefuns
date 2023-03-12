@@ -1,4 +1,4 @@
-# 클론코딩 진행 상황
+# 진행 상황
 
 ![SHANA 웰컴](https://user-images.githubusercontent.com/119824625/224524900-be63d2c3-7a07-47a7-91b3-0b06b2c15da8.gif)
 
