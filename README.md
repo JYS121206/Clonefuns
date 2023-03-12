@@ -2,7 +2,7 @@
 ![0312](https://user-images.githubusercontent.com/119824625/224523476-b01be835-964e-418b-876c-c76626c46bcf.png)
 클론코딩 진행 상황
 
-![SHANA 웰컴](https://user-images.githubusercontent.com/119824625/224524622-4fc35027-d0d7-4926-82d0-f457d0ebb895.gif)
+![SHANA 웰컴](https://user-images.githubusercontent.com/119824625/224524900-be63d2c3-7a07-47a7-91b3-0b06b2c15da8.gif)
 시작하면 Welcome 애니메이션
 
 ![SHANA 대기](https://user-images.githubusercontent.com/119824625/224524655-c0e74f10-1b12-4124-90e7-3bd01e787a28.gif)
@@ -17,10 +17,10 @@ Idle 상태가 6초 이상 지속되면 랜덤 포즈로 변경
 ![SHANA 각도](https://user-images.githubusercontent.com/119824625/224524645-068c1bc8-692d-40cf-b290-1842da9956bb.gif)
 플레이어가 특정 지역에 도착하면 카메라 각도 변경, 특정 UI 활성화 (벗어나면 되돌아온다)
 
-![SHANA 복귀](https://user-images.githubusercontent.com/119824625/224524634-c6941bb1-65c9-4092-9378-7fc5ae276368.gif)
+![SHANA 복귀](https://user-images.githubusercontent.com/119824625/224524898-27f3cbd2-8a4f-4e18-9831-70f828ae34e1.gif)
 버튼) 시작 좌표로 복귀
 
-![SHANA 인포](https://user-images.githubusercontent.com/119824625/224524631-64dc88ab-a884-44b9-acab-fe63def1996f.gif)
+![SHANA 인포](https://user-images.githubusercontent.com/119824625/224524901-f561f16d-56db-4aca-bd6b-17c168a33577.gif)
 버튼) 소개 페이지
 
 ![SHANA 메모](https://user-images.githubusercontent.com/119824625/224524668-9e642c63-cf97-4ea3-ba3e-9086fec6a1c4.gif)
