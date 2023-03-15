@@ -20,15 +20,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed = 2.0f;
     [SerializeField] private PlayerState _state = PlayerState.Welcome;
 
-    private Vector3 destiniation;
-    private bool isMove;
     private Camera cam;
     private Animator anim;
+
+    private bool isMove;
+    private Vector3 destiniation;
+    private GameObject destPoint;
+
     private float restTime = 6.0f;
+
     private Vector3 startPos;
     private Quaternion startRot;
-    GameObject destPoint;
-    [SerializeField] private Vector3 _delta = new Vector3(0, 0.3f, 0);
 
     private void Awake()
     {
@@ -36,12 +38,6 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         startPos = transform.position;
         startRot = transform.rotation;
-    }
-
-    private void Start()
-    {
-        //Managers.Input.KeyAction -= MoveKeyCode;
-        //Managers.Input.KeyAction += MoveKeyCode;
     }
 
     private void Update()
@@ -75,14 +71,16 @@ public class PlayerController : MonoBehaviour
             destPoint = Managers.Resource.Instantiate("objPoint");
 
         destPoint.SetActive(true);
-        destPoint.transform.position = destiniation + _delta;
+        destPoint.transform.position = destiniation + new Vector3(0, 0.3f, 0);
+
         _state = PlayerState.Moveing;
+
         Vector3 dir = (destiniation - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 0.1f);
         transform.position = Vector3.Lerp(transform.position, destiniation, _speed * Time.deltaTime);
+            
     }
 
-    /// <summary> 마우스로 이동 </summary>
     public void MoveMouse()
     {
         if (Input.GetMouseButton(0))
@@ -96,34 +94,6 @@ public class PlayerController : MonoBehaviour
                 SetDestiniation(hit.point);
         }
         Move();
-    }
-
-    /// <summary> 키보드로 이동 </summary>
-    public void MoveKeyCode()
-    {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward), 0.1f);
-            transform.position += Vector3.forward * Time.deltaTime * _speed;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.back), 0.1f);
-            transform.position += Vector3.back * Time.deltaTime * _speed;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.left), 0.1f);
-            transform.position += Vector3.left * Time.deltaTime * _speed;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.right), 0.1f);
-            transform.position += Vector3.right * Time.deltaTime * _speed;
-        }
     }
 
     public void SetPlayerState()
@@ -160,12 +130,11 @@ public class PlayerController : MonoBehaviour
         if (_state == PlayerState.Idle || _state == PlayerState.Welcome)
         {
             int rand = Random.Range(3, 6);
-            Debug.Log($"{(PlayerState)rand}");
             _state = (PlayerState)rand;
         }
     }
 
-    public void ReSetPos()
+    public void ResetPos()
     {
         if (destPoint != null)
             destPoint.SetActive(false);

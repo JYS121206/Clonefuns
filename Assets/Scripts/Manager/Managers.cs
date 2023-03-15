@@ -14,10 +14,15 @@ public class Managers : MonoBehaviour
         {
             if (_instance == null)
             {
-                GameObject go = new GameObject("@Managers");
-                _instance = go.AddComponent<Managers>();
-
+                GameObject go = GameObject.Find("@Managers");
+                if (go == null)
+                {
+                    go = new GameObject { name = "@Managers" };
+                    go.AddComponent<Managers>();
+                }
                 DontDestroyOnLoad(go);
+                _instance = go.GetComponent<Managers>();
+                _instance._sound.Init();
             }
 
             return _instance;
@@ -25,15 +30,11 @@ public class Managers : MonoBehaviour
     }
     #endregion
 
-    InputManager _input = new InputManager();
     ResourceManager _resource = new ResourceManager();
     SoundManager _sound = new SoundManager();
+    UIManager _ui = new UIManager();
 
-    public static InputManager Input { get { return Instance._input; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
-
-    private void Update()
-    {
-        Input.OnUpdate();
-    }
+    public static SoundManager Sound { get { return Instance._sound; } }
+    public static UIManager UI { get { return Instance._ui; } }
 }

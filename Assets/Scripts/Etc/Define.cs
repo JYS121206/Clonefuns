@@ -9,10 +9,17 @@ public class Define
         Press,
         Click,
     }
+    public enum Sound
+    {
+        Bgm,
+        Effect,
+        MaxCont,
+    }
 
     public enum CameraMode
     {
         QuarterView,
-        Focus,
+        FocusUI,
+        FocusBoard,
     }
 }

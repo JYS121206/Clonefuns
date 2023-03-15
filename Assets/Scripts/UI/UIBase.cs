@@ -10,7 +10,13 @@ public class UIBase : MonoBehaviour
 
     protected enum GameObjects
     {
-        Buttons,
+        ButtonGroup,
+        Introduce,
+        Memo,
+        Pop,
+        Message,
+        Video,
+        PlayBar,
     }
 
     protected enum Buttons
@@ -23,20 +29,25 @@ public class UIBase : MonoBehaviour
         btnCloseIntro,
         btnCloseMemo,
         btnSaveMemo,
+        btnExit,
+        btnPlay,
+        btnBackward,
+        btnForward,
+        btnCloseVideo,
+        btnFull,
     }
     protected enum Images
     {
-        imgLogo,
-        imgIntro,
-        imgMemo,
+        imgProfile,
     }
 
     protected enum Texts
     {
         txtIntro,
-        Placeholder,
-        Text,
-        txtPop,
+        txtName,
+        txtAbout,
+        txtMessage,
+        txtPlayTime,
     }
 
     #endregion
@@ -71,6 +82,7 @@ public class UIBase : MonoBehaviour
         return objects[idx] as T;
     }
 
+    protected GameObject GetGameObject(GameObjects gameObjects) { return Get<GameObject>((int)gameObjects); }
     protected Button GetButton(Buttons buttons) { return Get<Button>((int)buttons); }
     protected Image GetImage(Images images) { return Get<Image>((int)images); }
     protected Text GetText(Texts texts) { return Get<Text>((int)texts); }
