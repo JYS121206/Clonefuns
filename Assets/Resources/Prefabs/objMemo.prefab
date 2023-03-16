@@ -325,7 +325,6 @@ MonoBehaviour:
   imgMemo: {fileID: 9161639451505559003}
   btnMemo: {fileID: 9161639451505559005}
   board: 1
-  uIButton: {fileID: 0}
 --- !u!1 &9161639451383562481
 GameObject:
   m_ObjectHideFlags: 0
