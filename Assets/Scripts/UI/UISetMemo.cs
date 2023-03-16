@@ -43,4 +43,11 @@ public class UISetMemo : MonoBehaviour
         colorMemo.a = 1-a;
         txtMemo.color = colorMemo;
     }
+
+    public void SetLoadTextColor()
+    {
+        Color color = Color.white;
+        color.a = 0;
+        txtMemo.color = color;
+    }
 }

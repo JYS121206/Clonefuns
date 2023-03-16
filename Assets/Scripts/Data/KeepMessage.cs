@@ -8,7 +8,7 @@ public class KeepMessage : MonoBehaviour
 {
     private GameObject player;
     private GameObject Board;
-    private int idx = 0;
+    int idx;
 
     [SerializeField] public List<string> _inputMessage;
     [SerializeField] public List<MessageData> messageDatas = new List<MessageData>();
@@ -27,6 +27,11 @@ public class KeepMessage : MonoBehaviour
     {
         _inputMessage.Add(input);
 
+
+        idx = _inputMessage.Count-1;
+
+        Debug.Log($"{idx}");
+
         GameObject memo = Managers.Resource.Instantiate("Memo");
         memo.GetComponent<UISetMemo>().SetMessage(_inputMessage[idx]);
         memo.transform.position = player.transform.position;
@@ -39,7 +44,6 @@ public class KeepMessage : MonoBehaviour
         objMemo.transform.localPosition = new Vector3(x, y, -0.8f);
 
         messageDatas.Add(new MessageData(idx, input, memo.transform.position));
-        idx++;
     }
 
     public List<MessageData> GetMessageDatas() { return messageDatas; }
@@ -51,6 +55,7 @@ public class KeepMessage : MonoBehaviour
         GameObject memo = Managers.Resource.Instantiate("Memo");
         memo.GetComponent<UISetMemo>().SetMessage(_inputMessage[idx]);
         memo.transform.position = messagePosition;
+        memo.GetComponent<UISetMemo>().SetLoadTextColor();
 
         GameObject objMemo = Managers.Resource.Instantiate("objMemo");
         objMemo.GetComponent<UISetMemo>().SetMessage(_inputMessage[idx]);
