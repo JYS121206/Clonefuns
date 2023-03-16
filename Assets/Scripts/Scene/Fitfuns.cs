@@ -8,6 +8,7 @@ using UnityEditor.VersionControl;
 public class Fitfuns : MonoBehaviour
 {
     private GameObject player;
+    private GameObject ui;
 
     private SaveData saveData = new SaveData();
     private string SAVE_DATA_DIRECTORY;
@@ -17,20 +18,17 @@ public class Fitfuns : MonoBehaviour
 
     void Awake ()
     {
-        if (GameObject.FindWithTag("Player") != null)
-        { player = GameObject.FindWithTag("Player"); }
-        else
-        { player = Managers.Resource.Instantiate("UnityChan"); }
+        if (FindObjectOfType<PlayerController>() == false)
+        {
+            player = Managers.Resource.Instantiate("UnityChan");
+            player.name = "Player";
+        }
 
-        player.name = "Player";
+        if (FindObjectOfType<UIFitfuns>() == false)
+            Managers.UI.OpenUI("UIFitfuns");
 
         if (FindObjectOfType<EventSystem>() == false)
-        { Managers.UI.SetEventSystem(); }
-
-        if (GameObject.FindWithTag("UI") == null)
-        { Managers.UI.OpenUI("UIFitfuns"); }
-
-        messages = GameObject.FindWithTag("UI").GetComponent<KeepMessage>();
+            Managers.UI.SetEventSystem();
 
         SAVE_DATA_DIRECTORY = Application.dataPath + "/Save/";
         if (!Directory.Exists(SAVE_DATA_DIRECTORY))
@@ -39,6 +37,8 @@ public class Fitfuns : MonoBehaviour
 
     private void Start()
     {
+        ui = GameObject.FindWithTag("UI");
+        messages = GameObject.FindWithTag("UI").GetComponent<KeepMessage>();
         LoadData();
     }
 
